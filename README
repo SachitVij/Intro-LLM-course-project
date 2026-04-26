@@ -1,0 +1,112 @@
+# Intro_LLM
+
+Hands-on lab workspace for learning Large Language Models (LLMs), retrieval, prompting strategies, agents, guardrails, and basic model fine-tuning workflows using Python notebooks and scripts.
+
+## Repository Overview
+
+This project is organized as a sequence of labs (`lab1` to `lab10`) plus a few standalone notebooks at the root.
+
+Root-level files:
+
+- `Gemma3_(1B)_GRPO.ipynb`: notebook related to Gemma 3 (1B) and GRPO-style workflow.
+- `Lab_13_persona_vectors_lab.ipynb`: persona vector experimentation notebook.
+- `Llama3_(8B)_Ollama.ipynb`: notebook for Llama 3 + Ollama exploration.
+
+Lab folders:
+
+- `lab1/`: basic retrieval pipeline script and sample data (`cat-facts.txt`).
+- `lab2/`: query transformation notebooks (`multi-query`, `rewrite`, `routing`, `stepback-qa`).
+- `lab3/`: Python scripting + unit testing example (`script.py`, `test_script.py`).
+- `lab4/`: guardrails and synthetic healthcare data use case.
+- `lab5/`: NumPy, PyTorch, and sample notebook exercises.
+- `lab6/`: Working with data.
+- `lab7/`: Coding Attention Mechanisms.
+- `lab8/`: Implementing a GPT model from Scratch To Generate Text.
+- `lab9/`: Comprehensive exam solution.
+- `lab10/`: lab notebook (`Lab_10v2.ipynb`).
+
+## Attribution and Copyright
+
+Labs `lab6` to `lab8` contain coding exercises and selected text excerpts based on the book *Build a Large Language Model (From Scratch)* by Sebastian Raschka.
+
+These materials are included for personal educational use only. Do not redistribute book text, exercise statements, or any substantial copyrighted material from the book.
+
+## Prerequisites
+
+- Python 3.10+ (recommended: 3.11)
+- VS Code with Jupyter extension
+- Ollama installed locally (for notebooks/scripts that call local models)
+
+Optional but useful:
+
+- Git
+- A dedicated virtual environment per project
+
+## Setup
+
+From the project root, create and activate a virtual environment.
+
+### Windows PowerShell
+
+```powershell
+python -m venv venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+.\venv\Scripts\Activate.ps1
+```
+
+### Install common dependencies
+
+```powershell
+pip install jupyter notebook ipykernel ollama google-genai numpy matplotlib torch
+```
+
+If a notebook imports additional libraries (for example LangChain-related packages), install those on demand.
+
+## Running Content
+
+### Jupyter notebooks
+
+1. Open any `.ipynb` file in VS Code.
+2. Select the `venv` Python kernel.
+3. Run cells top-to-bottom.
+
+### Python scripts
+
+Example from `lab1`:
+
+```powershell
+cd .\lab1
+python .\lab1.py
+```
+
+Example tests from `lab3`:
+
+```powershell
+cd .\lab3
+python -m unittest .\test_script.py -v
+```
+
+## Notes Per Lab
+
+- `lab1/lab1.py` demonstrates a minimal retrieval flow using embeddings and cosine similarity with Ollama.
+- `lab2` focuses on prompt/query strategy patterns.
+- `lab3` contains clean, testable Python logic and unit tests.
+- Later labs (`lab4+`) are primarily notebook-driven explorations.
+
+## API Keys and Secrets
+
+Recommended pattern in PowerShell:
+
+```powershell
+$env:OPENAI_API_KEY="your_key_here"
+$env:GEMINI_API_KEY="your_key_here"
+```
+
+In Python:
+
+```python
+import os
+
+openai_key = os.getenv("OPENAI_API_KEY")
+gemini_key = os.getenv("GEMINI_API_KEY")
+```
