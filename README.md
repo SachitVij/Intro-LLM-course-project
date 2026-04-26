@@ -1,4 +1,4 @@
-# Intro_LLM
+# Intro to LLM course project Lab
 
 Hands-on lab workspace for learning Large Language Models (LLMs), retrieval, prompting strategies, agents, guardrails, and basic model fine-tuning workflows using Python notebooks and scripts.
 
